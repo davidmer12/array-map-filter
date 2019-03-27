@@ -13,6 +13,26 @@ Tableau renvoyé par multiplyOddIndices:
 */
 
 function multiplyOddIndices(numbers) {
+
+  //Affecte la méthode ".map" à la fonction "numbers"
+  //Les paramètres de la fonction sont ceux par défaut :...
+  //...l'élément du tableau, l'indice de l'élément du tableau
+  return numbers.map(function(nombre, indice) {
+
+    //Si l'index est pair...
+    if (indice%2 === 0) {
+
+      //... alors retourne le nombre...
+      return nombre;
+
+      //...sinon s'il est impair...
+    } else {
+      
+      //...retourne comme résultat, le nombre x par son indice
+      return nombre * indice;
+    }
+
+  })
 }
 
 module.exports = multiplyOddIndices;

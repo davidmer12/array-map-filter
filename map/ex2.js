@@ -42,7 +42,15 @@ En sortie: [
 
  */
 
+ //appel la fonction dans "map2.test.js"
 function getFoodCategories(foods) {
+
+  return foods.map(eat => {
+    
+    const eatVege = eat.isVegetarian === true ? ' is suitable for vegetarians' : ' is not suitable for vegetarians';
+    return eat.food + eatVege;
+  })
+
 }
 
 

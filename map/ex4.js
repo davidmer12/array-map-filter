@@ -52,8 +52,37 @@ Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
 */
 
 function getCirclesProperties(radiuses) {
-}
 
+  //je retourne le paramètre "raduises" auquel je lie la méthode ".map"
+  return radiuses.map(radius => {
+
+    //calcul de la circonférence
+    const circumference = 2 * Math.PI * radius;
+
+    //calcul de la surface
+    const surface = Math.PI * radius * radius;
+
+    return {
+      //Dans le libellé "radius",...
+      //...j'appelle chaque rayon qui se trouve dans le tableau d'entrée...
+      //puisqu'il s'agit d'un tableau et non d'objet, on n'utilise pas le "." 
+      radius:radius,
+
+      //Dans le libellé "circumference",...
+      //...j'appelle le résultat de la variable "circumference" calculé auparavant...
+      //...et auquel j'ajoute la méthode ".toFixed(3)" pour avoir 3 chiffres après la virgule
+      circumference:circumference.toFixed(3),
+
+      //Dans le libellé "surface",...
+      //...j'appelle le résultat de la variable "surface" calculé auparavant...
+      //...et auquel j'ajoute la méthode ".toFixed(3)" pour avoir 3 chiffres après la virgule
+      surface:surface.toFixed(3)
+    }
+
+  } )
+
+
+}
 
 
 // Ne pas modifier l'export

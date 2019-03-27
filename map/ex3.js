@@ -60,8 +60,50 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
-}
 
+  //"(film => {" est la même chose que "(function(film) {"
+  return movies.map(film => {
+
+    if (film.rating < 60) {
+      film.label = 'rotten';
+    }
+
+    else if (film.rating >= 60 && film.rating <= 75) {
+      film.label ='fresh';
+    } 
+
+    else { film.label = 'certified fresh'}
+
+    return film;
+
+      //"film.rating" permet de cibler "rating" dans le tableau d'entrée
+      // if (film.rating < 60) {
+        
+      //   label = 'rotten';
+
+      // } else if (film.rating >= 60 && film.rating <= 75) {
+
+      //   label = 'fresh';
+
+      // } else {
+
+      //   label = 'certified fresh';
+
+      // }
+
+      // //return movies;
+    
+      // return {
+      //    //je teste l'objet "name" en allant dans le fichier de test via le paramètre "film" de la function
+      //    name: film.name,
+      //    //je teste l'objet "rating" en allant dans le fichier de test via le paramètre "film" de la function
+      //    rating: film.rating,
+      //    //je teste l'objet "label" qui est présent dans ce fichier
+      //    label: label
+      //  };
+
+  } )
+}
 
 
 // Ne pas modifier l'export
